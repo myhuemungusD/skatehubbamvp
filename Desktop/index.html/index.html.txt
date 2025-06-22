@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Dice Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Street Dice Challenge</h1>
+
+        <div class="player-area">
+            <h2>Your Dice</h2>
+            <div class="dice-display" id="player-dice">
+                <img src="dice1.png" alt="Dice 1" class="die-img">
+                <img src="dice1.png" alt="Dice 1" class="die-img">
+                <img src="dice1.png" alt="Dice 1" class="die-img">
+            </div>
+            <p id="player-hand-info" class="hand-info"></p>
+        </div>
+
+        <div class="computer-area">
+            <h2>Computer's Dice</h2>
+            <div class="dice-display" id="computer-dice">
+                <img src="dice1.png" alt="Dice 1" class="die-img">
+                <img src="dice1.png" alt="Dice 1" class="die-img">
+                <img src="dice1.png" alt="Dice 1" class="die-img">
+            </div>
+            <p id="computer-hand-info" class="hand-info"></p>
+        </div>
+
+        <button id="roll-button">Roll Dice</button>
+
+        <div class="results-area">
+            <h3 id="game-result">Let's Play!</h3>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
