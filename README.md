@@ -53,6 +53,20 @@ SkateHubba is a platform that brings together skateboarding enthusiasts through 
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
 
+## 🔒 Security Rules Deployment
+
+Deploy updated Firestore & Storage rules:
+```bash
+firebase deploy --only firestore:rules,storage:rules
+```
+
+Roles are derived from user documents (users/{uid}.roles). Allowed roles: `admin`, `moderator`.
+- Admin: full admin / leaderboard writes / role management
+- Moderator: submissions approval / activity creation
+- User: create submissions, read public data
+
+Clip uploads limited to <50MB video MIME types.
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
