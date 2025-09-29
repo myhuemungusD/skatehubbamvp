@@ -53,6 +53,49 @@ SkateHubba is a platform that brings together skateboarding enthusiasts through 
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
 
+## ☁️ Cloud Functions
+
+This project includes Cloud Functions for submission moderation with role-based authorization.
+
+### Functions Available
+
+- **approveSubmission**: Approve a submission (mod/admin only)
+  - Increments user points based on challenge configuration
+  - Creates audit trail and activity entries
+  - Prevents self-approval
+  
+- **rejectSubmission**: Reject a submission (mod/admin only)
+  - Creates audit trail (no points awarded)
+  - Does not create activity entries per product spec
+  - Prevents self-rejection
+
+### Deployment
+
+Build and deploy Cloud Functions:
+```bash
+npm --workspace functions run build && firebase deploy --only functions
+```
+
+### Local Development with Emulators
+
+Start Firebase emulators (functions, firestore, storage, ui):
+```bash
+firebase emulators:start
+```
+
+This will start:
+- Functions emulator on port 5001
+- Firestore emulator on port 8080
+- Storage emulator on port 9199
+- Emulator UI on port 4000
+
+### Function Testing
+
+Run Cloud Function tests:
+```bash
+cd functions && npm test
+```
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
