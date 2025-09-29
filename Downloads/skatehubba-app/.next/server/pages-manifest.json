@@ -3,7 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/challenges/[id]": "pages/challenges/[id].js",
-  "/challenges/mine": "pages/challenges/mine.js",
+  "/challenges/challenges": "pages/challenges/challenges.js",
   "/challenges": "pages/challenges.js",
+  "/challenges/mine": "pages/challenges/mine.js",
   "/": "pages/index.js"
 }
