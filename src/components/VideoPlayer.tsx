@@ -1,7 +1,7 @@
 "use client";
 
 import { getDownloadURL, ref } from "firebase/storage";
-import { storage } from "@/lib/firebase";
+import { storage } from "../firebase";
 import { useEffect, useState } from "react";
 
 interface Props {

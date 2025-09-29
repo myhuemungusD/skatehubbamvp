@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../lib/firebase";
+import { db } from "../../firebase";
+import Link from "next/link";
 
 interface Challenge {
   id: string;
@@ -62,12 +63,12 @@ export default function Challenges() {
           ))}
         </ul>
       )}
-      <a
+      <Link
         href="/"
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700"
       >
         Back to Home
-      </a>
+      </Link>
     </div>
   );
 }

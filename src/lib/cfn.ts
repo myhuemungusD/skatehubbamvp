@@ -1,7 +1,10 @@
 import { getFunctions, httpsCallable } from "firebase/functions";
 import { z } from "zod";
 
-// Get functions instance - we'll use the firebase config from the existing setup
+// Import the firebase app instance
+import "../firebase"; // This ensures firebase is initialized
+
+// Get functions instance - this will use the firebase app from ../firebase
 const functions = getFunctions();
 
 /* ---------- INPUT/OUTPUT SCHEMAS ---------- */
