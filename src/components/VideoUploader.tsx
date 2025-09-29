@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, updateDoc, serverTimestamp } from "firebase/firestore";
-import { storage, db } from "@/lib/firebase";
-import { buildChallengeClipPath, UploadMetaSchema } from "@/lib/validators";
+import { storage, db } from "../firebase";
+import { buildChallengeClipPath, UploadMetaSchema } from "../lib/validators";
 
 interface Props {
   gameId: string;
@@ -29,11 +29,7 @@ export default function VideoUploader({ gameId, uid, playerKey }: Props) {
 
     task.on("state_changed", (snap) => {
       setProgress((snap.bytesTransferred / snap.totalBytes) * 100);
-    });
-
-    task.on("error", (err) => console.error(err));
-
-    task.on("complete", async () => {
+    }, (err) => console.error(err), async () => {
       const url = await getDownloadURL(storageRef);
       await updateDoc(doc(db, "games", gameId), {
         [`players.${playerKey}.lastClipPath`]: path,

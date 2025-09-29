@@ -46,6 +46,31 @@ SkateHubba is a platform that brings together skateboarding enthusiasts through 
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## 🏆 Features
+
+### Leaderboard
+
+Route: `/leaderboard` with tabs: Global, Spots (stub), Friends (stub).
+
+Global Tab:
+- All-Time: Streams `users` ordered by `totalPoints` or `stats.points` (top 100).
+- Weekly / Monthly: Aggregates recent `activity` docs (type `submission-approved`) within timeframe (7 or 30 days) client-side (limit 1000).
+
+Indexes Added:
+- users: totalPoints DESC
+- activity: createdAt DESC
+- activity: userId ASC, createdAt DESC (supports time range queries with WHERE createdAt >= ts AND WHERE type == 'submission-approved').
+
+Deployment:
+```bash
+firebase deploy --only firestore:indexes
+```
+
+Future Enhancements:
+- Materialize weekly/monthly leaderboards via scheduled Cloud Function to avoid large client aggregation.
+- Implement Spots tab using challenge metadata (e.g. spotId) + aggregate points per spot.
+- Implement Friends tab using social graph (follow relationships).
+
 ## 🏗️ Available Scripts
 
 - `npm run dev` - Start development server
