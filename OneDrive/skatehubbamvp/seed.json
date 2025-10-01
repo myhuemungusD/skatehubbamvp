@@ -1,0 +1,78 @@
+{
+  "users": {
+    "testUser1": {  
+      "email": "player1@skatehubba.com",
+      "displayName": "SkaterPro",
+      "createdAt": 1696000000000,
+      "updatedAt": 1696000000000,
+      "stats": {
+        "gamesPlayed": 5,
+        "gamesWon": 3,
+        "gamesLost": 2,
+        "tricksLanded": 15,
+        "tricksMissed": 8
+      }
+    },
+    "testUser2": {
+      "email": "player2@skatehubba.com", 
+      "displayName": "TrickMaster",
+      "createdAt": 1696000000000,
+      "updatedAt": 1696000000000,
+      "stats": {
+        "gamesPlayed": 8,
+        "gamesWon": 4,
+        "gamesLost": 4,
+        "tricksLanded": 22,
+        "tricksMissed": 12
+      }
+    },
+    "testUser3": {
+      "email": "spectator@skatehubba.com",
+      "displayName": "SkateWatcher", 
+      "createdAt": 1696000000000,
+      "updatedAt": 1696000000000,
+      "stats": {
+        "gamesPlayed": 1,
+        "gamesWon": 0,
+        "gamesLost": 1,
+        "tricksLanded": 2,
+        "tricksMissed": 5
+      }
+    }
+  },
+  "games": {
+    "sampleGame1": {
+      "createdBy": "testUser1",
+      "opponent": "testUser2", 
+      "letters": {
+        "testUser1": "S",
+        "testUser2": "SK"
+      },
+      "turn": "testUser1",
+      "status": "in-progress",
+      "createdAt": 1696000000000,
+      "updatedAt": 1696005000000
+    },
+    "sampleGame2": {
+      "createdBy": "testUser3",
+      "opponent": "",
+      "letters": {},
+      "turn": "testUser3", 
+      "status": "waiting",
+      "createdAt": 1696010000000,
+      "updatedAt": 1696010000000
+    },
+    "sampleGame3": {
+      "createdBy": "testUser1",
+      "opponent": "testUser3",
+      "letters": {
+        "testUser1": "SKATE",
+        "testUser3": "SKA"
+      },
+      "turn": "testUser3",
+      "status": "finished",
+      "createdAt": 1695990000000,
+      "updatedAt": 1696000000000
+    }
+  }
+}
